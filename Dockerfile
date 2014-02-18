@@ -5,7 +5,6 @@ RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -s /bin/true /sbin/initctl
 RUN apt-get update && apt-get -y install python-software-properties wget curl
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update && apt-get -y upgrade
