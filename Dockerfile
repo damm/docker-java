@@ -14,4 +14,4 @@ RUN apt-get -y install oracle-java7-installer && apt-get clean
 RUN update-alternatives --display java
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/environment
 RUN echo '# /lib/init/fstab: cleared out for bare-bones lxc' > /lib/init/fstab
-RUN cat /proc/mounts | grep -v rootfs > /etc/mtab
+RUN ln -sf /proc/self/mounts /etc/mtab
