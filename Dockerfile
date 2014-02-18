@@ -1,5 +1,6 @@
 FROM    ubuntu:latest
 MAINTAINER <scott@likens.us>
+RUN apt-mark hold initscripts udev plymouth mountall
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
