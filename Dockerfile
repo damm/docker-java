@@ -1,4 +1,4 @@
-FROM    ubuntu:latest
+FROM    stackbrew/ubuntu:12.04
 MAINTAINER <scott@likens.us>
 RUN apt-mark hold initscripts udev plymouth mountall
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
